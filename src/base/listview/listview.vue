@@ -1,11 +1,11 @@
 <template>
-  <scroll :data="data">
+  <scroll :data="data" class="listview">
     <div class="singer-list-wrapper">
       <div v-for="group in data" class="list-group">
         <h2 class="list-group-title">{{group.title}}</h2>
         <ul class="singer-info">
           <li class="singer-info-item" v-for="item in group.items">
-            <img class="avatar" src="item.avatar" alt="">
+            <img class="avatar" :src="item.avatar" alt="">
             <span class="name">{{item.name}}</span>
           </li>
         </ul>
@@ -35,3 +35,7 @@
     }
   }
 </script>
+
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  @import './listview.styl'
+</style>
