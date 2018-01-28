@@ -1,5 +1,6 @@
 @import "~common/stylus/variable"
-.listview
+@import "~common/stylus/mixin"
+.list-view
   position: relative
   width: 100%
   height: 100%
@@ -18,6 +19,7 @@
       .singer-info
         .singer-info-item
           display: flex
+          align-items: center
           padding: 20px 0 0 30px
           .avatar
             width: 50px
@@ -27,3 +29,38 @@
             margin-left: 20px
             color: $color-text-l
             font-size: $font-size-medium
+  .list-shortcut-wrapper
+    width: 20px
+    padding: 20px 0
+    border-radius: 10px
+    position: absolute
+    right: 0
+    top: 50%
+    transform(translateY(-50%))
+    background: $color-background-d
+    font-family: Helvetica
+    .letter-group
+      text-align: center
+      .letter-group-item
+        padding: 3px
+        color: $color-text-l
+        font-size: $font-size-small
+        &.current
+          color: $color-theme
+  .list-fixed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    .fixed-title
+      height: 30px
+      line-height: 30px
+      padding-left: 20px
+      font-size: $font-size-small
+      color: $color-text-l
+      background: $color-highlight-background
+  .loading-container
+    position: absolute
+    width: 100%
+    top: 50%
+    transform(translateY(-50%))

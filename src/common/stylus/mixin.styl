@@ -20,3 +20,14 @@ extend-click()
     left: -10px
     right: -10px
     bottom: -10px
+
+// css浏览器兼容
+pre($style, $value)
+   -webkit-{$style} $value
+   -moz-{$style} $value
+   -ms-{$style} $value
+   {$style} $value
+
+transform($arg)
+   pre(transform, $arg)
+
