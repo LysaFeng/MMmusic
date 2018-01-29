@@ -9,7 +9,7 @@
       <div v-for="group in data" class="list-group" ref="listGroup">
         <h2 class="list-group-title">{{group.title}}</h2>
         <ul class="singer-info">
-          <li class="singer-info-item" v-for="item in group.items">
+          <li class="singer-info-item" v-for="item in group.items" @click="selectItem(item)">
             <img class="avatar" :src="item.avatar" alt="">
             <span class="name">{{item.name}}</span>
           </li>
@@ -85,6 +85,9 @@
       this.probeType = 3
     },
     methods: {
+      selectItem(item) {
+        this.$emit('select', item)
+      },
       onShortcutTouchStart(e) {
         let anchorIndex = getData(e.target, 'index')
         // touches[0] means the first touch(when use a finger)
