@@ -8,6 +8,8 @@ import 'common/stylus/index.styl'
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueLazyload from 'vue-lazyload'
+// why path shoule be './store'?
+import store from './store'
 
 require('swiper/dist/css/swiper.css')
 Vue.config.productionTip = false
@@ -21,6 +23,7 @@ Vue.use(VueLazyload, {
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
