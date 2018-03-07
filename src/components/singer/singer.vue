@@ -48,10 +48,11 @@
           }
         }
         list.forEach((item, index) => {
+          // console.log('id:' + item.Fsinger_mid)
           if (index < HOT_SINGER_LEN) {
             map.hot.items.push(
               {
-                id: item.Fsinger_id,
+                id: item.Fsinger_mid,
                 name: item.Fsinger_name,
                 avatar: 'http://y.gtimg.cn/music/photo_new/T001R300x300M000' + item.Fsinger_mid + '.jpg?max_age=2592000'
               }
@@ -65,12 +66,12 @@
             }
           }
           map[key].items.push({
-            id: item.Fsinger_id,
+            id: item.Fsinger_mid,
             name: item.Fsinger_name,
             avatar: 'http://y.gtimg.cn/music/photo_new/T001R300x300M000' + item.Fsinger_mid + '.jpg?max_age=2592000'
           })
         })
-        // in order to get ordered lists, need to handdle
+        // in order to get ordered lists, need to handdle map
         let ret = []
         let hot = []
         for (let key in map) {
